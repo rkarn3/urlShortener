@@ -11,6 +11,8 @@ interface IUrlData {
   isSingleUse: boolean;
   createdAt: string;
 }
+let baseUrl = import.meta.env.VITE_BASE_URL
+
 
 function App() {
   const [url, setUrl] = useState<string>('')
@@ -37,7 +39,7 @@ function App() {
   const handleLinkConversion = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const res: { data: IUrlData } = await axios.post('http://localhost:3000/create-short-url', {
+      const res: { data: IUrlData } = await axios.post(`${baseUrl}/create-short-url`, {
         "longUrl": url,
         isSingleUse
       })
