@@ -12,18 +12,22 @@ urlValidation = (url) => {
 router.post('/', async function(req, res, next) {
   const {longUrl, isSingleUse} = req.body
   const id = crypto.randomBytes(4).toString("base64");
+  const sanitizedString = randomBytes
+                          .replace(/\+/g, '%2B')
+                          .replace(/\//g, '%2F')
+                          .replace(/_/g, '%5F');
   if(urlValidation(longUrl)){
     try {
       let url = await Shortener.findOne({ url:longUrl });
       if (url) {
         res.json(url);
       } else {
-        const shortUrl = `${process.env.BASE_URI}/${id}`;
+        const shortUrl = `${process.env.BASE_URI}/${sanitizedString}`;
   
         url = new Shortener({
           url: longUrl,
           shortUrl,
-          urlId: id,
+          urlId: sanitizedString,
           isSingleUse,
           createdAt: new Date(),
         });
