@@ -46,7 +46,7 @@ function App() {
       setError('')
       setShortUrl(res.data.shortUrl)
     }
-    catch (e) {
+    catch (e:any) {
       setError(e.response.data)
       setUrl('')
       console.error(e)
