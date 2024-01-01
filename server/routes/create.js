@@ -12,7 +12,7 @@ urlValidation = (url) => {
 router.post('/', async function(req, res, next) {
   const {longUrl, isSingleUse} = req.body
   const id = crypto.randomBytes(4).toString("base64");
-  const sanitizedString = randomBytes
+  const sanitizedString = id
                           .replace(/\+/g, '%2B')
                           .replace(/\//g, '%2F')
                           .replace(/_/g, '%5F');
