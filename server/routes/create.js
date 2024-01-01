@@ -35,7 +35,7 @@ router.post('/', async function(req, res, next) {
       console.log(err);
       res.status(500).json('Server Error');
     }
-  } else res.status(400).json ('Invalid Original Url');
+  } else res.status(400).json ('Invalid Original Url. Valid Sample URL -> http://www.example.com/');
 });
 
 module.exports = router;

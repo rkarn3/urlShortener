@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.shortener__viewShot {
+  margin-top: 20px;
+  border: 1px solid gainsboro;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  color: rgb(64, 64, 66);
+  align-items: center;
+}
+.shortener__viewShot button {
+  background-color: transparent;
+  border: none;
+  color: gray;
+}
+.shortener__viewShot button:hover {
+  color: rgb(64, 64, 66);
+}
+

@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/:urlId', async function(req, res, next) {
   try {
     let url = await Shortener.findOne({ urlId:req.params.urlId });
+    console.log("🚀 ~ file: fetchUri.js:9 ~ router.get ~ url:", url)
     if (url) {
         if(url.isSingleUse && url.clicks === 1) return res.json('Link not usable more than once')
         await Shortener.updateOne(
