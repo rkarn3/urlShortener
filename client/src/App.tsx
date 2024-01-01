@@ -11,7 +11,7 @@ interface IUrlData {
   isSingleUse: boolean;
   createdAt: string;
 }
-let baseUrl = import.meta.env.VITE_BASE_URL
+const baseUrl = import.meta.env.VITE_BASE_URL
 
 
 function App() {
