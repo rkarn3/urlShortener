@@ -1,17 +1,18 @@
-Run the server 
-  cd server
-  npm i
-  npm start
 
-Run the client
-  cd client
-  yarn
-  yarn start
+### Run the server 
+- cd server
+- npm i
+- npm start
+
+### Start Frontend
+- cd client
+- yarn
+- yarn start
 
 
-Architecture
+## Architecture
 
-Backend-> node
-frontend-> react with typescript
-db -> mongo
+- Backend-> node
+- frontend-> react with typescript
+- db -> mongo
 
